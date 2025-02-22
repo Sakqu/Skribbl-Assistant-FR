@@ -610,21 +610,45 @@ copie
 bouée
 ville
 club
+guépard
+guepard
+ciboulette
+fusil à pompe
+Pâques
+logitech
 crabe
 fougère
 corbeau
 fizz
 points
 écho
+cache-poussière
+fouetter
+pique nique
+le marsupilami
 sortie
+saoul
+frapper
 elmo
+vendeur de BD
+toboggan
 elsa
+mètre ruban
+encouragements
+guimauve
+équateur
+thé
+éléphant de mer
 examen
+tuyau d'arrosage
+déchets
 fifa
 finn
+guêpe
 lèvres
 grenouille
 cadeau
+Trunks
 haut
 germe
 fille
@@ -1284,6 +1308,7 @@ pâtisserie
 garde-manger
 lézard
 sorcier
+jeu de société
 ecchymose
 croisière
 caniche
@@ -1621,6 +1646,7 @@ arctique
 archer
 ancre
 amazone
+amazon
 amande
 airbag
 afrique
@@ -1639,12 +1665,17 @@ cactus
 pare-chocs
 bouddha
 bronze
+enfer
 seau
 bulle
 cassé
 esquimau
 branche
 bretelles
+punaise de lit
+tenue de soirée
+requin-marteau
+bracelet d'amitié
 boxe
 wagon couvert
 bowser
@@ -1916,13 +1947,16 @@ tsunami
 trompette
 victoire
 remorque
+stylo plume
 trafic
+papier
 tracteur
 touriste
 torpille
 site web
 tornade
 haut-de-forme
+Marseille
 titanic
 boîte à outils
 Tom chat
@@ -3190,11 +3224,13 @@ superpouvoir
 nappe
 tambourin
 tater tots
+râteau
 boîte à mouchoirs
 terminator
 brosse à dents
 dentifrice
 tir à la corde
+tir à l'arc
 trampoline
 traducteur
 trick shot
@@ -3234,10 +3270,15 @@ blindé
 magasin de bonbons
 gâteau aux carottes
 chewing-gum
+maître nageur
+maitre nageur
+twitch
 chou-fleur
 pom-pom girl
+Zeus
 garde-côtes
 darth vador
+dark vador
 café
 daltonien
 confortable
@@ -3600,3 +3641,9 @@ ongle de doigt
 chanel
 raclette
 hot-dog
+ariel
+épingle
+sonnerie
+Flash McQueen
+chien de berger
+incendie
