@@ -334,7 +334,7 @@ autoGuessButton.addEventListener('click', toggleAutoGuessing);
 
 
 async function exportNewWords() {
-    const old = await fetchWords('https://raw.githubusercontent.com/zkisaboss/reorderedwordlist/main/wordlist.txt');
+    const old = await fetchWords('https://raw.githubusercontent.com/Sakqu/Skribbl-Assistant-FR/main/listedemot.txt');
     const newWords = correctAnswers.filter(word => !old.includes(word));
 
     const blob = new Blob([newWords.join('\n')], { type: 'text/plain;charset=utf-8' });
