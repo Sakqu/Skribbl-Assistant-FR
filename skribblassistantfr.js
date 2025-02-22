@@ -52,19 +52,28 @@ settingsElem.appendChild(exportButton);
 const correctAnswers = GM_getValue('correctAnswers', []);
 
 async function fetchWords(url) {
-    const response = await fetch(url);
-    if (!response.ok) return [];
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Erreur de chargement de la liste de mots.');
 
-    const data = await response.text();
-    return data.split('\n').filter(elem => elem !== '');
+        const data = await response.text();
+        return data.split('\n').map(word => word.trim()).filter(word => word !== '');
+    } catch (error) {
+        console.error('Erreur de récupération des mots :', error);
+        return [];
+    }
 }
 
 async function fetchAndStoreLatestWordlist() {
+    console.log("[LOG] Récupération de la liste des mots...");
+
     const words = await fetchWords('https://raw.githubusercontent.com/Sakqu/Skribbl-Assistant-FR/main/listedemot.txt');
 
     words.forEach(word => {
         if (!correctAnswers.includes(word)) correctAnswers.push(word);
     });
+
+    console.log("[LOG] Liste des mots mise à jour :", correctAnswers);
 }
 
 fetchAndStoreLatestWordlist();
@@ -77,11 +86,14 @@ function findUsername() {
     if (!target) return;
 
     const observer = new MutationObserver(() => {
-        myUsername = document.querySelector(".me").textContent.replace(" (You)", "")
-        observer.disconnect();
+        const meElement = document.querySelector(".me");
+        if (meElement) {
+            myUsername = meElement.textContent.replace(" (You)", "");
+            observer.disconnect();
+        }
     });
 
-    observer.observe(target, { childList: true});
+    observer.observe(target, { childList: true, subtree: true });
 }
 
 findUsername();
@@ -89,15 +101,19 @@ findUsername();
 
 function observeDrawingTurn() {
     const target = document.querySelector('.words');
-    if (!target) return;
+    if (!target) {
+        console.warn("[ERREUR] Impossible de trouver l'élément des mots.");
+        return;
+    }
+
+    console.log("[LOG] Détection des mots activée.");
 
     const observer = new MutationObserver(() => {
         target.childNodes.forEach(word => {
             const text = word.textContent.toLowerCase();
-
             if (!correctAnswers.includes(text)) {
                 correctAnswers.push(text);
-                console.log(`New Word: ${text}`)
+                console.log(`[LOG] Nouveau mot ajouté : ${text}`);
                 GM_setValue('correctAnswers', correctAnswers);
             }
         });
@@ -163,8 +179,7 @@ function generateGuesses() {
     const filteredWords = possibleWords.filter(word => word.startsWith(pattern));
 
     if (possibleWords.length === 1) {
-        inputElem.value = possibleWords.shift();
-        inputElem.closest('form').dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    submitGuess(possibleWords.shift());
     }
 
     renderGuesses(filteredWords);
@@ -268,11 +283,19 @@ function handleChatMessage(messageNode) {
 
 function observeChat() {
     const target = document.querySelector('.chat-content');
-    if (!target) return;
+    if (!target) {
+        console.warn("[ERREUR] Impossible de trouver la chatbox.");
+        return;
+    }
+
+    console.log("[LOG] Surveillance du chat activée.");
 
     const observer = new MutationObserver(() => {
         const lastMessage = target.lastElementChild;
-        if (lastMessage) handleChatMessage(lastMessage);
+        if (lastMessage) {
+            console.log("[LOG] Nouveau message détecté :", lastMessage.textContent);
+            handleChatMessage(lastMessage);
+        }
     });
 
     observer.observe(target, { childList: true });
@@ -348,4 +371,19 @@ async function exportNewWords() {
 }
 
 exportButton.addEventListener('click', exportNewWords);
+function submitGuess(word) {
+    console.log(`[LOG] Tentative de soumission du mot : ${word}`);
+
+    const inputElem = document.querySelector('#game-chat input[data-translate="placeholder"]');
+    const formElem = document.querySelector('#game-chat form');
+
+    if (inputElem && formElem) {
+        inputElem.value = word;
+        formElem.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        console.log("[LOG] Mot soumis avec succès !");
+    } else {
+        console.warn("[ERREUR] Impossible de trouver le champ de saisie du chat.");
+    }
+}
+
 })();
