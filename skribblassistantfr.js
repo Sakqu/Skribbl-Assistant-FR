@@ -2,9 +2,9 @@
 // @name         Skribbl Assistant FR
 // @namespace    http://tampermonkey.net/
 // @supportURL   https://github.com/Sakqu/Skribbl-Assistant-FR
-// @version      1.01
+// @version      1.00
 // @description  Script pour deviner automatiquement les mots dans Skribbl.io en français.
-// @author       Zach Kosove
+// @author       Sakqu
 // @match        http*://skribbl.io/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=skribbl.io
 // @grant        GM_setValue
@@ -15,8 +15,6 @@
 // @compatible   opera
 // @compatible   safari
 // @compatible   edge
-// @downloadURL https://update.greasyfork.org/scripts/503563/Skribbl%20Autoguesser.user.js
-// @updateURL https://update.greasyfork.org/scripts/503563/Skribbl%20Autoguesser.meta.js
 // ==/UserScript==
 
 (function() {
