@@ -38,12 +38,12 @@ Object.assign(settingsElem.style, { position: 'absolute', bottom: 'calc(100%)', 
 parentElement.appendChild(settingsElem);
 
 const autoGuessButton = document.createElement('button');
-autoGuessButton.innerHTML = `Auto Guess: ${autoGuessing ? 'ON' : 'OFF'}`;
+autoGuessButton.innerHTML = `Réponse automatique : ${autoGuessing ? 'ACTIVÉE' : 'DÉSACTIVÉE'}`;
 Object.assign(autoGuessButton.style, { padding: '5px 10px', fontSize: '12px', backgroundColor: '#333', color: '#fff' });
 settingsElem.appendChild(autoGuessButton);
 
 const exportButton = document.createElement('button');
-exportButton.innerHTML = 'Export Answers';
+exportButton.innerHTML = 'Exporter les réponses';
 Object.assign(exportButton.style, { padding: '5px 10px', fontSize: '12px', backgroundColor: '#333', color: '#fff' });
 settingsElem.appendChild(exportButton);
 
@@ -322,6 +322,50 @@ function observeInput() {
 
 observeInput();
 
+function addSuggestionOverlay() {
+    const inputElem = document.querySelector('#game-chat input[data-translate="placeholder"]');
+
+    const suggestionSpan = document.createElement('span');
+    suggestionSpan.style.position = 'absolute';
+    suggestionSpan.style.color = 'rgba(0, 0, 0, 0.7)';
+    suggestionSpan.style.pointerEvents = 'none'; // Ne pas interférer avec les clics
+    suggestionSpan.style.fontSize = window.getComputedStyle(inputElem).fontSize;
+    suggestionSpan.style.fontFamily = window.getComputedStyle(inputElem).fontFamily;
+    suggestionSpan.style.top = '50%'; // Centrer verticalement
+    suggestionSpan.style.transform = 'translateY(-50%)';
+    suggestionSpan.style.whiteSpace = 'nowrap'; // Ne pas faire de retour à la ligne
+    suggestionSpan.style.zIndex = '10'; // Placer la suggestion au-dessus du champ
+    suggestionSpan.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Fond pour le tester visuellement
+    suggestionSpan.style.padding = '0 5px'; // Ajouter un peu de padding pour le confort visuel
+
+    inputElem.parentNode.style.position = 'relative'; // Assure que le parent a un positionnement relatif
+
+    inputElem.parentNode.appendChild(suggestionSpan); // Ajouter la suggestion au parent
+
+    inputElem.addEventListener('input', () => {
+        const value = inputElem.value.toLowerCase().trim();
+        const bestMatch = possibleWords.find(word => word.startsWith(value));
+
+        if (bestMatch) {
+            suggestionSpan.textContent = bestMatch.slice(value.length);
+            suggestionSpan.style.left = `${inputElem.offsetWidth + 5}px`; // Décaler la suggestion à droite du champ
+        } else {
+            suggestionSpan.textContent = '';
+        }
+    });
+
+    inputElem.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab' && suggestionSpan.textContent) {
+            event.preventDefault(); // Empêcher l'action par défaut du Tab
+            inputElem.value += suggestionSpan.textContent; // Ajouter la suggestion au champ
+            suggestionSpan.textContent = ''; // Effacer la suggestion
+        }
+    });
+}
+
+
+addSuggestionOverlay();
+
 
 let autoGuessInterval;
 
@@ -341,7 +385,7 @@ startAutoGuessing();
 
 function toggleAutoGuessing() {
     autoGuessing = !autoGuessing;
-    autoGuessButton.innerHTML = `Auto Guess: ${autoGuessing ? 'ON' : 'OFF'}`;
+    autoGuessButton.innerHTML = `Réponse automatique : ${autoGuessing ? 'ACTIVÉE' : 'DÉSACTIVÉE'}`;
 
     if (autoGuessing) {
         startAutoGuessing();
