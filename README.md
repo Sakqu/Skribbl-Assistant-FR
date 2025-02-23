@@ -30,8 +30,8 @@ Assurez-vous d'avoir l'extension **Tampermonkey** installée sur votre navigateu
 
 ## 🎮 Utilisation
 
-🟢 **Activer/Désactiver l'auto-détection** : Cliquez sur le bouton *"Auto Guess"* pour activer ou désactiver la détection automatique des mots.  
-📂 **Exporter les nouveaux mots** : Cliquez sur *"Export Answers"* pour télécharger la liste des nouveaux mots ajoutés.  
+🟢 **Activer/Désactiver l'auto-détection** : Cliquez sur le bouton *"Réponse automatique"* pour activer ou désactiver la détection automatique des mots.  
+📂 **Exporter les nouveaux mots** : Cliquez sur *"Exporter les réponses"* pour télécharger la liste des nouveaux mots ajoutés.  
 🖱️ **Interface interactive** : Utilisez le panneau flottant pour voir et sélectionner les suggestions de mots.
 
 ---
