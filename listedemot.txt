@@ -19,10 +19,13 @@ canette
 ventilateur
 homme
 tapis
+braquage
 coussin
 épingle
 tasse
+tortue terrestre
 insecte
+boomerang
 chiffon
 câlin
 treuil
@@ -2688,6 +2691,7 @@ fourche
 manifestant
 professeur
 principal
+Volkswagen
 possédé
 président
 porky pig
@@ -2701,6 +2705,7 @@ lime à ongles
 pinocchio
 pin
 pomme de pin
+passage à niveau
 photoshop
 photobombe
 pewdiepie
@@ -3351,6 +3356,7 @@ cabine téléphonique
 photomaton
 cadre photo
 sac plastique
+poêle à frire
 playstation
 grenade
 pot d'or
@@ -3602,7 +3608,7 @@ nintendo switch
 aurores boréales
 procrastination
 maison de retraite
-reine elizabeth
+Reine Elisabeth
 lunettes de lecture
 sherlock holmes
 stephen hawking
