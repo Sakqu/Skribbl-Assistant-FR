@@ -9,6 +9,7 @@ bot
 chat
 manger
 gros
+huître
 rat
 fourgonnette
 casserole
@@ -17,21 +18,38 @@ stylo
 lan
 canette
 ventilateur
+amérique du sud
+couteaux du roi
+couteaux du mer
+cascades du sud
+paysages du lac
 homme
 tapis
+téléphone
 braquage
 coussin
 épingle
+bouée de piscine
+coup de boule
 tasse
 tortue terrestre
 insecte
+sapin de Noël
 boomerang
 chiffon
+bâiller
+noeud papillon
+grain
 câlin
+avengers
 treuil
+château d'eau
+New-York
 cruche
 soja
 courir
+tronçonneuse
+ours en gélatine
 espion
 carlin
 jouet
@@ -596,20 +614,27 @@ ville
 asie
 zoom
 bébé
+perle
 abba
 acdc
 afro
 acide
 acné
 munitions
+piercing au nez
 arche
 armée
 atome
+météorite
+molaires
 audi
 oiseau
+peintre
+auréole
 tante
 appât
 copie
+possédé
 bouée
 ville
 club
@@ -815,14 +840,17 @@ porche
 coach
 maison
 cheval
+suede
 tresse
 marque
+porte-monnaie
 tour
 serviette
 blush
 momie
 pinceau
 gomme
+bottle flip challenge
 juge
 fudge
 miel
@@ -1260,6 +1288,8 @@ maillet
 balle
 pagaie
 flaque
+jaune d'œuf
+oignon
 selle
 interrupteur
 point
@@ -1274,7 +1304,10 @@ prise
 banquier
 bunker
 bannière
-g absolu
+carreleur
+absolu
+gringalet
+mr larbin
 majordome
 gagnant
 dîner
@@ -1319,12 +1352,14 @@ nouilles
 sports
 shorts
 potion
+fin
 lotion
 saule
 prison
 poison
 taille
 poids
+jeu vidéo
 danois
 oreiller
 disparaître
@@ -1816,6 +1851,8 @@ gants
 planeur
 geyser
 gentil
+tétine
+château d'eau
 neveu
 alaska
 écurie
@@ -2725,17 +2762,25 @@ lady gaga
 malbouffe
 pepperoni
 invention
+dé
 étiquette de prix
 john cena
 joe biden
+bulgarie
+rails
 méduse
 invisible
 introverti
 interview
 instagram
 injection
+lance-pierres
 merengues
-piège à souris
+médecin de la peste
+docteur de la peste
+lanceur de la hache
+piège à souris	
+pédicure
 moto
 mona lisa
 minecraft
@@ -3631,13 +3676,17 @@ Fontaine à eau
 Extincteur
 George Washington
 Léonard de Vinci
+reine elizabeth
+fouine
 Léonard de Caprio
 Statue de la Liberté
 Lightning McQueen
 Crayon mécanique
 Passage à niveau
 Essuie-glaces
+aladdin
 Grande barrière de corail
+transat
 Léonard de Caprio
 Opéra de Sydney
 Bracelet d'amitié
@@ -3648,7 +3697,9 @@ chanel
 raclette
 hot-dog
 ariel
+Redditeur
 épingle
+guitare classique
 sonnerie
 Flash McQueen
 chien de berger
